@@ -1,0 +1,54 @@
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Searching for the favicon within the static folder (refer to .info.txt for more information)  -->
+    <link rel="shortcut icon" type="image/png" href="{% static "images/favicon.ico" %}"/>
+    <!-- Bootstrap cdn's  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+    <a class="nav-item nav-link active" href="{% url 'index' %}">Home</a>
+    <a class="nav-item nav-link" href="{% url 'broodjeshuis' %}">Broodjeshuys</a>
+    <a class="nav-item nav-link" href="{% url 'walvis' %}">De Walvis</a>
+    </div>
+</div>
+</nav>
+<div class="container mt-4">
+    <div class="row mt-4">
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="{% static "images/broodjes_logo.png" %}" alt="Broodjeshuis logo">
+                <hr>
+                <div class="card-body">
+                    <h5 class="card-title">Broodjeshuys</h5>
+                    <p class="card-text">Op de Donderdag</p>
+                    <a href="{% url 'broodjeshuis' %}" type="button" class="btn btn-primary btn-lg btn-block">Kies</a>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <img class="card-img-top" src="{% static "images/walvis_logo.png" %}" alt="De Walvis logo">
+                <hr>
+                <div class="card-body">
+                    <h5 class="card-title">De Walvis</h5>
+                    <p class="card-text">Op de Vrijdag</p>
+                    <a href="{% url 'walvis' %}" type="button" class="btn btn-primary btn-lg btn-block">Kies</a>
+                </div>
+            </div>
+            <br>
+        </div>        
+    </div>
+</div>
