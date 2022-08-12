@@ -1,0 +1,5 @@
+install gunicorn 
+create requirements.txt
+update ALLOWED_HOSTS in settings.py
+create Procfile
+create runtime.txt
