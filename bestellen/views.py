@@ -25,7 +25,8 @@ def broodjeshuis(request):
     return HttpResponse(template.render(context, request))
 
 def walvis(request):
-    bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
+    bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis")
+    # bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
     template = loader.get_template('walvis.html')
     context = {
         'bestelling': bestelling,
