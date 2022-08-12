@@ -2,9 +2,10 @@ from django.db import models
 from django.urls import reverse
 
 class Broodjeshuis(models.Model):
-    naam = models.CharField(max_length=255)
-    nummer = models.CharField(max_length=255)
-    keuze = models.TextField()
+    naam = models.CharField(max_length=255, default='Niet ingevuld')
+    nummer = models.CharField(max_length=255, default='Niet ingevuld')
+    keuze = models.TextField(default='Niet ingevuld')
+    prijs = models.CharField(max_length=255, default='Niet ingevuld')
     datum = models.DateField(auto_now_add=True)
     datumExact = models.DateTimeField(auto_now_add=True)
 
@@ -16,9 +17,10 @@ class Broodjeshuis(models.Model):
         
 
 class Walvis(models.Model):
-    naam = models.CharField(max_length=255)
-    nummer = models.CharField(max_length=255)
-    keuze = models.TextField()
+    naam = models.CharField(max_length=255, default='Niet ingevuld')
+    nummer = models.CharField(max_length=255, default='Niet ingevuld')
+    keuze = models.TextField(default='Niet ingevuld')
+    prijs = models.CharField(max_length=255, default='Niet ingevuld')
     datum = models.DateField(auto_now_add=True)
     datumExact = models.DateTimeField(auto_now_add=True)
 

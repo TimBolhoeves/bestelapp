@@ -44,7 +44,8 @@ def broodjeshuis_bestellen_post(request):
     naam = request.POST['naam']
     nummer = request.POST['nummer']
     keuze = request.POST['keuze']
-    bestelling = Broodjeshuis(naam=naam, nummer=nummer, keuze=keuze)
+    prijs = request.POST['prijs']
+    bestelling = Broodjeshuis(naam=naam, nummer=nummer, keuze=keuze, prijs=prijs)
     bestelling.save()
     return HttpResponseRedirect(reverse('broodjeshuis'))
 
@@ -53,6 +54,18 @@ def walvis_bestellen_post(request):
     naam = request.POST['naam']
     nummer = request.POST['nummer']
     keuze = request.POST['keuze']
-    bestelling = Walvis(naam=naam, nummer=nummer, keuze=keuze)
+    prijs = request.POST['prijs']
+    bestelling = Walvis(naam=naam, nummer=nummer, keuze=keuze, prijs=prijs)
     bestelling.save()
     return HttpResponseRedirect(reverse('walvis'))
+
+def betaler(request):
+    bestellingwalvis = Walvis.objects.all().values()
+    bestellingbroodjes = Broodjeshuis.objects.all().values()
+    template = loader.get_template('betaler.html')
+    context = {
+        'bestellingwalvis': bestellingwalvis,
+        'bestellingbroodjes': bestellingbroodjes,
+        'datum': vandaag_format,
+    }
+    return HttpResponse(template.render(context, request))

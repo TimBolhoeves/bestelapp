@@ -22,6 +22,8 @@
             <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
             <a class="nav-item nav-link active" href="{% url 'broodjeshuis' %}">Broodjeshuys</a>
             <a class="nav-item nav-link" href="{% url 'walvis' %}">De Walvis</a>
+            <a class="nav-item nav-link" href="#">|</a>
+            <a class="nav-item nav-link" href="{% url 'betaler' %}">Bepaal de betaler</a>
             </div>
         </div>
     </nav>
@@ -33,18 +35,23 @@
         <form action="post/" method="post">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="naam" class="form-label">Naam</label>
+                <label for="naam" class="form-label">Naam *</label>
                 <input name="naam" type="text" class="form-control" id="naam" required>
             </div>
             <div class="mb-3">
-                <label for="nummer" class="form-label">Telefoonnummer</label>
+                <label for="nummer" class="form-label">Telefoonnummer *</label>
                 <input name="nummer" type="tel" class="form-control" id="nummer" min="0" pattern="[0-9]{10}" required>
                 <div class="form-text"><small>Voorbeeld: 0612345678</small></div>
             </div>
             <div class="mb-3">
-                <label for="keuze" class="form-label">Keuze</label>
+                <label for="keuze" class="form-label">Keuze *</label>
                 <input name="keuze" type="text" class="form-control" id="keuze" required>
                 <div class="form-text"><a href="https://www.broodjeshuys.nl/#menu" target="_blank">Menukaart</a></div>
+            </div>
+            <div class="mb-3">
+                <label for="prijs" class="form-label">Prijs</label>
+                <input name="prijs" type="text" class="form-control" id="prijs">
+                <div class="form-text"><small>Voor het makkelijk maken van het sturen van Tikkies</small></div>
             </div>
             <br><br>
             <button type="submit" class="btn btn-primary">Submit</button>

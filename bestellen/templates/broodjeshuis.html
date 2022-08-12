@@ -21,12 +21,14 @@
         <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
         <a class="nav-item nav-link active" href="{% url 'broodjeshuis' %}">Broodjeshuys</a>
         <a class="nav-item nav-link " href="{% url 'walvis' %}">De Walvis</a>
+        <a class="nav-item nav-link" href="#">|</a>
+        <a class="nav-item nav-link" href="{% url 'betaler' %}">Bepaal de betaler</a>
         </div>
     </div>
 </nav>
 
 <div class="container mt-4">
-    <h1>Broodjeshuys <small class="text-muted">| {{datum}}</small></h1>
+    <h1>Broodjeshuys <small class="text-muted">| {{datum}} | Bestellen kan tot 11:30</small></h1>
     <br>
     <a class="btn btn-primary" href="bestellen/" role="button">Bestellen</a>  
     <br><br><br>
@@ -37,6 +39,7 @@
           <th>Naam</th>
           <th>Telefoonnummer</th>
           <th>Keuze</th>
+          <th>Prijs</th>
         </tr>
       </thead>
       <tbody>
@@ -50,6 +53,7 @@
                 <td>{{ eten.naam }}</td>
                 <td>{{ eten.nummer }}</td>
                 <td>{{ eten.keuze }}</td>
+                <td>{{ eten.prijs }}</td>
             </tr>
         {% endfor %}
       </tbody>
