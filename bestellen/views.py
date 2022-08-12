@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime, timedelta
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
@@ -7,8 +7,9 @@ from .models import Broodjeshuis, Walvis
 from django.views.decorators.csrf import *
 
 DATE_FORMAT = "%Y-%m-%d"
+HEROKU_RELEASE = True
 
-vandaag = date.today()
+vandaag = date.today() # + timedelta(days=1)
 vandaag_format = vandaag.strftime(DATE_FORMAT)
 
 def index(request):
@@ -16,7 +17,11 @@ def index(request):
   return HttpResponse(template.render())
 
 def broodjeshuis(request):
-    bestelling = Broodjeshuis.objects.all().values()
+    if HEROKU_RELEASE is False:
+        bestelling = Broodjeshuis.objects.raw("SELECT * FROM bestellen_broodjeshuis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
+    else:
+        bestelling = Broodjeshuis.objects.raw("SELECT * FROM bestellen_broodjeshuis WHERE datum = '{}' ".format(vandaag_format))
+
     template = loader.get_template('broodjeshuis.html')
     context = {
         'bestelling': bestelling,
@@ -25,8 +30,11 @@ def broodjeshuis(request):
     return HttpResponse(template.render(context, request))
 
 def walvis(request):
-    bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE datum = '{}' ".format(vandaag_format))
-    # bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
+    if HEROKU_RELEASE is False:
+        bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
+    else:
+        bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE datum = '{}' ".format(vandaag_format))
+
     template = loader.get_template('walvis.html')
     context = {
         'bestelling': bestelling,
