@@ -71,8 +71,13 @@ def walvis_bestellen_post(request):
     return HttpResponseRedirect(reverse('walvis'))
 
 def betaler(request):
-    bestellingwalvis = Walvis.objects.all().values()
-    bestellingbroodjes = Broodjeshuis.objects.all().values()
+    if HEROKU_RELEASE is False:
+        bestellingbroodjes = Broodjeshuis.objects.raw("SELECT * FROM bestellen_broodjeshuis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
+        bestellingwalvis = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
+    else:
+        bestellingbroodjes = Broodjeshuis.objects.raw("SELECT * FROM bestellen_broodjeshuis WHERE datum = '{}' ".format(vandaag_format))
+        bestellingwalvis = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE datum = '{}' ".format(vandaag_format))
+
     template = loader.get_template('betaler.html')
     context = {
         'bestellingwalvis': bestellingwalvis,
