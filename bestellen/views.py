@@ -6,8 +6,10 @@ from django.urls import reverse
 from .models import Broodjeshuis, Walvis
 from django.views.decorators.csrf import *
 
+DATE_FORMAT = "%Y-%m-%d"
+
 vandaag = date.today()
-vandaag_format = vandaag.strftime("%B %d, %Y")
+vandaag_format = vandaag.strftime(DATE_FORMAT)
 
 def index(request):
   template = loader.get_template('index.html')
@@ -23,7 +25,7 @@ def broodjeshuis(request):
     return HttpResponse(template.render(context, request))
 
 def walvis(request):
-    bestelling = Walvis.objects.all().values()
+    bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis WHERE strftime('{}', datum) = '{}' ".format(DATE_FORMAT, vandaag_format))
     template = loader.get_template('walvis.html')
     context = {
         'bestelling': bestelling,
