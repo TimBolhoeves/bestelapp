@@ -10,7 +10,7 @@ This is a small and simple application made for De Boer Group, to order food on 
 (if you're using VSCode you can use it as an interpreter by pressing F1 and selecting the venv). 
 * When you're in the venv, run `py -m pip install -r requirements.txt`. 
 * Set database settings back to default (if you're not using an `.env` to set database settings), for more information, visit: [Django database settings](https://docs.djangoproject.com/en/4.1/ref/settings/#databases)
-* Set `SECRET_KEY` in `settings.py` to something random (and secure), you can do so by typing `py -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'` in the terminal
+* Set `SECRET_KEY` in `settings.py` to something random (and secure), you can do so by typing <br>`py -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'` in the terminal
 * After this run: `py manage.py makemigrations`. 
 * Followed by `py manage.py migrate`. 
 * Go into `views.py` and put `DEPLOYMENT` on False.
