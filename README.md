@@ -9,11 +9,13 @@ This is a small and simple application made for De Boer Group, to order food on 
 * Go into the venv by typing `.\.venv\Scripts\activate`. 
 (if you're using VSCode you can use it as an interpreter by pressing F1 and selecting the venv). 
 * When you're in the venv, run `py -m pip install -r requirements.txt`. 
-* Go to `DATABASES` in `settings.py` and set it to ```
+* Go to `DATABASES` in `settings.py` and set it to 
+```
 'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'mydatabase',
-    }```
+    }
+```
 * Set `SECRET_KEY` in `settings.py` to something random (and secure), you can do so by typing <br>`py -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'` in the terminal
 * After this run: `py manage.py makemigrations`. 
 * Followed by `py manage.py migrate`. 
