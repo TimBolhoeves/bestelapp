@@ -18,7 +18,7 @@ This is a small and simple application made for De Boer Group, to order food on 
 ```
 * Set `SECRET_KEY` in `settings.py` to something random (and secure), you can do so by typing <br>
 ```
-py -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'` 
+py -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
 ```
 in the terminal.
 * After this run: `py manage.py makemigrations
