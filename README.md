@@ -8,7 +8,7 @@ This is a small and simple application made for De Boer Group, to order food on 
 * Upon cloning the project, run `py -m venv .venv`. 
 * Go into the venv by typing `.\.venv\Scripts\activate`. 
 (if you're using VSCode you can use it as an interpreter by pressing F1 and selecting the venv). 
-* When you're in the venv, run `pip install -r requirements.txt`. 
+* When you're in the venv, run `py -m pip install -r requirements.txt`. 
 * After this run: `py manage.py makemigrations`. 
 * Followed by `py manage.py migrate`. 
 
