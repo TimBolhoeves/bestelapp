@@ -1,10 +1,10 @@
-# About
+# 📙 About
 This project was essentialy just training for me to grasp more of the Django framework
 <br>
 This is a small and simple application made for De Boer Group, to order food on certain days, which i think turned out pretty good
 
 
-## Setup
+# ⚙️ Setup
 (skip ahead to DEPLOYMENT if you want to deploy this project to heroku straight away)
 * Fork this repo (this is so you can deploy to heroku later on if you want to do so)
 * Upon cloning the project, run `py -m venv .venv`
@@ -33,7 +33,7 @@ in the terminal.
 ## Finished
 After all this is done, run `py manage.py runserver`
 
-## Deployment
+# 🚀 Deployment
 To deploy this application to Heroku, first, return everything to the way it was (like it is here, on this repo)
 * Fork this project
 * Make a `.gitignore` and fill it with:
@@ -59,7 +59,7 @@ DATABASE_URL=sqlite:///db.sqlite3
 * (optional) Create a superuser by typing `heroku run python manage.py createsuperuser` and follow the steps
 * To view your app in the browser, type `heroku open` in the terminal
 
-### Debugging
+## 🐛 Debugging
 The deployment may fail after deployment (server error 500) because of staticfiles, to fix this, do the following in order:
 * `heroku config:set DISABLE_COLLECTSTATIC=1`
 * `git push heroku main`
