@@ -17,7 +17,7 @@ This is a small and simple application made for De Boer Group, to order food on 
 ![](https://img.shields.io/badge/Heroku-informational?style=flat&logo=Heroku&logoColor=white&color=430098)
 
 # ⚙️ Setup
-(skip ahead to DEPLOYMENT if you want to deploy this project to heroku straight away)
+(skip ahead to [DEPLOYMENT](#-deployment) if you want to deploy this project to heroku straight away)
 * Fork this repo (this is so you can deploy to heroku later on if you want to do so)
 * Upon cloning the project, run `py -m venv .venv`
 * Go into the venv by typing `.\.venv\Scripts\activate`
