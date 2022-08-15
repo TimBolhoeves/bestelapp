@@ -88,7 +88,7 @@ def betaler(request):
 
 def broodjeshuis_geschiedenis(request):
     bestelling = Broodjeshuis.objects.all().values()
-    template = loader.get_template('broodjeshuis.html')
+    template = loader.get_template('broodjeshuis_geschiedenis.html')
     context = {
         'bestelling': bestelling,
         'datum': vandaag_format,
@@ -97,7 +97,7 @@ def broodjeshuis_geschiedenis(request):
 
 def walvis_geschiedenis(request):
     bestelling = Walvis.objects.all().values()
-    template = loader.get_template('walvis.html')
+    template = loader.get_template('walvis_geschiedenis.html')
     context = {
         'bestelling': bestelling,
         'datum': vandaag_format,
