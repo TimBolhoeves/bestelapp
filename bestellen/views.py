@@ -85,3 +85,21 @@ def betaler(request):
         'datum': vandaag_format,
     }
     return HttpResponse(template.render(context, request))
+
+def broodjeshuis_geschiedenis(request):
+    bestelling = Broodjeshuis.objects.all().values()
+    template = loader.get_template('broodjeshuis.html')
+    context = {
+        'bestelling': bestelling,
+        'datum': vandaag_format,
+    }
+    return HttpResponse(template.render(context, request))
+
+def walvis_geschiedenis(request):
+    bestelling = Walvis.objects.all().values()
+    template = loader.get_template('walvis.html')
+    context = {
+        'bestelling': bestelling,
+        'datum': vandaag_format,
+    }
+    return HttpResponse(template.render(context, request))

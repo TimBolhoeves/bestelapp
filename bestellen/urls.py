@@ -10,4 +10,6 @@ urlpatterns = [
     path('broodjeshuis/bestellen/post/', views.broodjeshuis_bestellen_post, name='broodjeshuis_bestellen_post'),
     path('walvis/bestellen/post/', views.walvis_bestellen_post, name='walvis_bestellen_post'),
     path('betaler/', views.betaler, name='betaler'),
+    path('broodjeshuis/geschiedenis/', views.broodjeshuis_geschiedenis, name='broodjeshuis_geschiedenis'),
+    path('walvis/geschiedenis/', views.walvis_geschiedenis, name='walvis_geschiedenis'),
 ]

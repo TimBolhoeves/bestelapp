@@ -19,46 +19,42 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
         <a class="nav-item nav-link" href="{% url 'index' %}">Home</a>
-        <a class="nav-item nav-link active" href="{% url 'broodjeshuis' %}">Broodjeshuys</a>
-        <a class="nav-item nav-link " href="{% url 'walvis' %}">De Walvis</a>
+        <a class="nav-item nav-link" href="{% url 'broodjeshuis' %}">Broodjeshuys</a>
+        <a class="nav-item nav-link active" href="{% url 'walvis' %}">De Walvis</a>
         <a class="nav-item nav-link" href="#">|</a>
         <a class="nav-item nav-link" href="{% url 'betaler' %}">Bepaal de betaler</a>
         </div>
     </div>
     <div class="my-2 my-lg-0">
-      <a class="nav-item nav-link" href="/admin">Admin Login</a>
+        <a class="nav-item nav-link" href="/admin">Admin Login</a>
     </div>
 </nav>
 
 <div class="container mt-4">
-    <h1>Broodjeshuys <small class="text-muted">| {{datum}} | Bestellen kan tot 11:30</small></h1>
+    <h1>De Walvis <small class="text-muted">| {{datum}} | Bestellen kan tot 11:30</small></h1>
     <br>
-    <a class="btn btn-primary" href="bestellen/" role="button">Bestellen</a> <a class="btn btn-info ml-5" href="geschiedenis/" role="button">Geschiedenis</a>   
+    <a class="btn btn-primary" href="bestellen/" role="button">Bestellen</a>  
     <br><br><br>
     <table class="table table-hover">
-      <thead class="bg-light">
-        <tr>
-          <th>Datum van bestelling</th>
-          <th>Naam</th>
-          <th>Telefoonnummer</th>
-          <th>Keuze</th>
-          <th>Prijs</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for eten in bestelling %}
-            {% if eten.datum > now %}
-              <tr class="bg-info text-white">
-            {% else %}
+        <thead class="bg-light">
+          <tr>
+            <th>Datum van bestelling</th>
+            <th>Naam</th>
+            <th>Telefoonnummer</th>
+            <th>Keuze</th>
+            <th>Prijs</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for eten in bestelling %}
                 <tr>
-            {% endif %}
-                <td>{{ eten.datum }}</td>
-                <td>{{ eten.naam }}</td>
-                <td>{{ eten.nummer }}</td>
-                <td>{{ eten.keuze }}</td>
-                <td>{{ eten.prijs }}</td>
-            </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+                  <td>{{ eten.datum }}</td>
+                  <td>{{ eten.naam }}</td>
+                  <td>{{ eten.nummer }}</td>
+                  <td>{{ eten.keuze }}</td>
+                  <td>{{ eten.prijs }}</td>
+              </tr>
+          {% endfor %}
+        </tbody>
+      </table>
   </div>
