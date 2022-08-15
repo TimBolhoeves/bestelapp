@@ -27,10 +27,10 @@ in the terminal.
 * Followed by `py manage.py migrate`
 * Go into `views.py` and put `HEROKU_RELEASE` on False
 
-## Optional
+## 🤔 Optional
 * Create a superuser to use in the admin by running: `py manage.py createsuperuser`. and going to `localhost/{port}/admin`
 
-## Finished
+## ✔️ Finished
 After all this is done, run `py manage.py runserver`
 
 # 🚀 Deployment
