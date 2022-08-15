@@ -1,6 +1,6 @@
 # 📙 About
 This project was essentialy just training for me to grasp more of the Django framework.
-<br>
+<br><br>
 This is a small and simple application made for De Boer Group, to order food on certain days, which i think turned out pretty good.
 
 # 🛠️ Tools 
