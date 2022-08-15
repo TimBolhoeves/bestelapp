@@ -36,6 +36,13 @@ After all this is done, run `py manage.py runserver`
 ## Deployment
 To deploy this application to Heroku, first, return everything to the way it was (like it is here, on this repo)
 * Fork this project
+* Make a `.gitignore` and fill it with:
+```
+.venv/
+.env
+__pycache__/
+nameYouChose.sqlite3
+```
 * Make an `.env` file, and fill it with:
 ```
 DEBUG=False
