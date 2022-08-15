@@ -37,7 +37,6 @@ py -c 'from django.core.management.utils import get_random_secret_key; print(get
 in the terminal.
 * After this run: `py manage.py makemigrations
 * Followed by `py manage.py migrate`
-* Go into `views.py` and put `HEROKU_RELEASE` on `False`
 
 ## 🤔 Optional
 * Create a superuser to use in the admin by running: `py manage.py createsuperuser`. and going to `localhost/{port}/admin`
