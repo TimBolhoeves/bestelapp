@@ -68,4 +68,5 @@ The deployment may fail after deployment (server error 500) because of staticfil
 * `heroku config:unset DISABLE_COLLECTSTATIC`
 * (optional) `heroku run python manage.py collectstatic`
 <br>
+[I'm an inline-style link](https://www.google.com)
 Check if the site still gives an error, if so, [This Page](https://stackoverflow.com/questions/36665889/collectstatic-error-while-deploying-django-app-to-heroku) may be of help
