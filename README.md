@@ -3,7 +3,7 @@ This project was essentialy just training for me to grasp more of the Django fra
 <br>
 This is a small and simple application made for De Boer Group, to order food on certain days, which i think turned out pretty good.
 
-# Tools 🔨
+# 🛠️ Tools 
 ![](https://img.shields.io/badge/Windows-informational?style=flat&logo=Windows&logoColor=white&color=0078D6)
 ![](https://img.shields.io/badge/Django-informational?style=flat&logo=Django&logoColor=white&color=092E20)
 ![](https://img.shields.io/badge/Python-informational?style=flat&logo=Python&logoColor=white&color=3776AB)
