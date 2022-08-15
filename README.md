@@ -53,7 +53,7 @@ DATABASE_URL=sqlite:///db.sqlite3
 * To view your app in the browser, type `heroku open` in the terminal
 
 ### Debugging
-The deploy may fail after deployment (server error 500) because of staticfiles, to fix this, do the following in order:
+The deployment may fail after deployment (server error 500) because of staticfiles, to fix this, do the following in order:
 * `heroku config:set DISABLE_COLLECTSTATIC=1`
 * `git push heroku main`
 * `heroku run python manage.py migrate`
