@@ -1,7 +1,7 @@
 # 📙 About
-This project was essentialy just training for me to grasp more of the Django framework
+This project was essentialy just training for me to grasp more of the Django framework.
 <br>
-This is a small and simple application made for De Boer Group, to order food on certain days, which i think turned out pretty good
+This is a small and simple application made for De Boer Group, to order food on certain days, which i think turned out pretty good.
 
 # Tools 🔨
 ![](https://img.shields.io/badge/Windows-informational?style=flat&logo=Windows&logoColor=white&color=0078D6)
