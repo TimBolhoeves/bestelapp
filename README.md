@@ -39,7 +39,7 @@ in the terminal.
 * Followed by `py manage.py migrate`
 
 ## 🤔 Optional
-* Create a superuser to use in the admin by running: `py manage.py createsuperuser`. and going to `localhost/{port}/admin`
+* Create a superuser to use in the admin by running: `py manage.py createsuperuser`. and going to `localhost/{port}/admin` after running the server of course ;)
 
 ## ✔️ Finished
 After all this is done, run `py manage.py runserver`
