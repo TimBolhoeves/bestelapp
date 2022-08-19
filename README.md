@@ -60,9 +60,9 @@ nameYouChose.sqlite3
 
 * Make a `runtime.txt` file and fill it with: `python-3.10.5`
 
-* Make a `Procfile` and fill it with: 
+* Make a `Procfile` and fill it with your project name (NOT your app name!): 
 ```
-web: gunicorn web.wsgi --log-file -
+web: gunicorn YourProjectName.wsgi --log-file -
 ```
 
 * Make an `.env` file, and fill it with:
