@@ -47,6 +47,7 @@ After all this is done, run `py manage.py runserver`
 # 🚀 Deployment
 To deploy this application to Heroku, first, return everything to the way it was (like it is here, on this repo)
 * Fork this project
+
 * Make a `.gitignore` and fill it with:
 ```
 .venv/
@@ -54,12 +55,51 @@ To deploy this application to Heroku, first, return everything to the way it was
 __pycache__/
 nameYouChose.sqlite3
 ```
+
+* Install the requirements by doing: `py -m pip install -r requirements.txt`
+
+* Make a `runtime.txt` file and fill it with: `python-3.10.5`
+
+* Make a `Procfile` and fill it with: 
+```
+web: gunicorn web.wsgi --log-file -
+```
+
 * Make an `.env` file, and fill it with:
 ```
 DEBUG=False
 SECRET_KEY=secret_key_you_generated_in_the_setup
 DATABASE_URL=sqlite:///db.sqlite3
 ```
+
+### All the following will be done in `settings.py`
+* Change `ALLOWED_HOSTS` to ['.herokuapp.com', 'localhost', '127.0.0.1']
+* Change `DEBUG` to `False`
+
+* Add:
+```
+from environs import Env
+
+env = Env()
+env.read_env()
+```
+To the top of the file, just below imports
+
+* Change the `SECRET_KEY` to `env.str("SECRET_KEY")`
+* Add `'whitenoise.runserver_nostatic',` above `'django.contrib.staticfiles',` in `INSTALLED_APPS`
+* Add `'whitenoise.middleware.WhiteNoiseMiddleware',` above `'django.middleware.common.CommonMiddleware',` in `MIDDLEWARE`
+
+* Change `DATABASES` to:
+```
+DATABASES = {
+    'default': env.dj_db_url("DATABASE_URL")
+}
+```
+
+* Add `STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"` just below `STATICFILES_DIRS`
+### End of `settings.py` modifications
+
+
 * Download the Heroku CLI, if you've not already done so
 * Go into the terminal and type `heroku login` and follow the steps
 * Create a heroku app by typing `heroku create nameyouwant`
