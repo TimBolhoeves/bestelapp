@@ -98,6 +98,7 @@ DATABASES = {
 
 * Add `STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"` just below `STATICFILES_DIRS`
 ### End of `settings.py` modifications
+<hr>
 
 ### Terminal commands
 * Download the Heroku CLI, if you've not already done so
