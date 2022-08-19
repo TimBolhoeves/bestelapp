@@ -73,7 +73,7 @@ DATABASE_URL=sqlite:///db.sqlite3
 ```
 
 ### All the following will be done in `settings.py`
-* Change `ALLOWED_HOSTS` to ['.herokuapp.com', 'localhost', '127.0.0.1']
+* Change `ALLOWED_HOSTS` to `['.herokuapp.com', 'localhost', '127.0.0.1']`
 * Change `DEBUG` to `False`
 
 * Add:
