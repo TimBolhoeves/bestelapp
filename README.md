@@ -115,7 +115,6 @@ DATABASES = {
 The deployment may fail after deployment (server error 500) because of staticfiles, to fix this, do the following in order:
 * `heroku config:set DISABLE_COLLECTSTATIC=1`
 * `git push heroku main`
-* (note: it may already work after the command above, if thats the case, go back to: #Terminal commands > Followed by ...)
 * `heroku run python manage.py migrate`
 * `heroku run 'bower install --config.interactive=false;grunt prep;python manage.py collectstatic --noinput'`
 * `heroku config:unset DISABLE_COLLECTSTATIC`
