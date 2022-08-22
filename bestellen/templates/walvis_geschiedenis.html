@@ -32,12 +32,12 @@
 </nav>
 
 <div class="container mt-4">
-    <h1>De Walvis <small class="text-muted">| Bestel geschiedenis</h1>
-    <br>
-    <a class="btn btn-primary" href="{% url 'walvis' %}" role="button">Terug</a>  
-    <br><br><br>
-    <input type="search" id="search" class="form-control rounded" placeholder="Zoeken..." aria-label="Search" aria-describedby="search-addon" />
-    <table class="table table-hover" id="table">
+  <h1>De Walvis <small class="text-muted">| Bestel geschiedenis</h1>
+  <br>
+  <a class="btn btn-primary" href="{% url 'walvis' %}" role="button">Terug</a>  
+  <br><br><br>
+  <input type="search" id="search" class="form-control rounded" placeholder="Zoeken..." aria-label="Search" aria-describedby="search-addon" />
+  <table class="table table-hover" id="table">
         <thead class="bg-light">
           <tr>
             <th>Datum van bestelling</th>
@@ -58,8 +58,8 @@
               </tr>
           {% endfor %}
         </tbody>
-      </table>
-  </div>
+    </table>
+</div>
   {% block script %}
   <script>
     var $rows = $('#table tbody tr');

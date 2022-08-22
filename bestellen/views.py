@@ -73,7 +73,7 @@ def betaler(request):
     return HttpResponse(template.render(context, request))
 
 def broodjeshuis_geschiedenis(request):
-    bestelling = Broodjeshuis.objects.all().values()
+    bestelling = Broodjeshuis.objects.raw("SELECT * FROM bestellen_broodjeshuis ORDER BY datum DESC")
     template = loader.get_template('broodjeshuis_geschiedenis.html')
     context = {
         'bestelling': bestelling,
@@ -82,7 +82,7 @@ def broodjeshuis_geschiedenis(request):
     return HttpResponse(template.render(context, request))
 
 def walvis_geschiedenis(request):
-    bestelling = Walvis.objects.all().values()
+    bestelling = Walvis.objects.raw("SELECT * FROM bestellen_walvis ORDER BY datum DESC")
     template = loader.get_template('walvis_geschiedenis.html')
     context = {
         'bestelling': bestelling,
